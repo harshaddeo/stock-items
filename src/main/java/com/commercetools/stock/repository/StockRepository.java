@@ -15,6 +15,7 @@ public interface StockRepository extends JpaRepository<Stock, String> {
 
     @Query(value = "select * from Stock s where s.timestamp >= :value order by s.quantity desc LIMIT 3", nativeQuery = true)
     List<Stock> findAllByRequestTimeStamp(@Param("value") Timestamp timestamp);
+
 }
 
 

@@ -1,6 +1,6 @@
 package com.commercetools.stock.dto;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +16,7 @@ import lombok.Setter;
 public class TopAvailableProduct {
 
     private String id;
-    private LocalDateTime timestamp;
+    private ZonedDateTime timestamp;
     private String productId;
     private int quantity;
 }
