@@ -1,9 +1,10 @@
-package com.commercetools.stock.model;
+package com.commercetools.stock.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,10 +13,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductStatistics implements java.io.Serializable{
+@Builder
+public class ProductStatisticsDTO implements java.io.Serializable{
 
     private LocalDateTime requestTimestamp;
     private String range;
     private List<TopAvailableProduct> topAvailableProducts;
-    private List<TopSellingProducts> topSellingProducts;
+    private List<TopSellingProduct> topSellingProducts;
 }

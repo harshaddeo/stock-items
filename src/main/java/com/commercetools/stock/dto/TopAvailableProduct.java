@@ -1,4 +1,4 @@
-package com.commercetools.stock.model;
+package com.commercetools.stock.dto;
 
 import java.time.LocalDateTime;
 
@@ -19,7 +19,4 @@ public class TopAvailableProduct {
     private LocalDateTime timestamp;
     private String productId;
     private int quantity;
-
-
-
 }

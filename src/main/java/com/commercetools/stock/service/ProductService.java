@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.commercetools.stock.model.Product;
 import com.commercetools.stock.model.Stock;
+import com.commercetools.stock.dto.TimeSpan;
 import com.commercetools.stock.repository.ProductRepository;
 import com.commercetools.stock.repository.StockRepository;
 
@@ -32,17 +33,14 @@ public class ProductService {
         return productRepository.findById(productId);
     }
 
-    public List<Stock> getstatisticsForToday(String timespan){
+    public List<Stock> getTopAvailableProductsByTime(TimeSpan timespan){
 
-        Timestamp timestamp = Timestamp.valueOf(LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT));
+        Timestamp timestamp = null;
+        if(timespan == TimeSpan.TODAY)
+            timestamp = Timestamp.valueOf(LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT));
+        else
+            timestamp = Timestamp.valueOf(LocalDateTime.of(LocalDate.now().minusDays(30), LocalTime.MIDNIGHT));
         return stockRepository.findAllByRequestTimeStamp(timestamp);
 
     }
-    public List<Stock> getstatisticsForLastMonth(String timespan){
-
-        Timestamp timestamp = Timestamp.valueOf(LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT));
-        return stockRepository.findAllByRequestTimeStamp(timestamp);
-    }
-
-
 }

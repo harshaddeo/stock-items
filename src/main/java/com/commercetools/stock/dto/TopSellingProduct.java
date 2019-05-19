@@ -1,4 +1,4 @@
-package com.commercetools.stock.model;
+package com.commercetools.stock.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class TopSellingProducts {
+public class TopSellingProduct {
 
     private String productId;
     private int itemsSold;
