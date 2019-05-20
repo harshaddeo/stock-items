@@ -13,19 +13,19 @@ easy and convenient way. Please provide within your application the following en
 
 ## Assumptions- 
 1. User do get request to see the statistics of tock for particular time rage. Range can be eiter TODAY or LAST_MONTH. </br>
-If we pass TODAY then we will only see statistics of today(starting from midnight). 
-And if we pass LAST_MONTH then we can see statistics of last month till today.
+If we pass TODAY then we will only see statistics of today(starting from midnight till now). 
+And if we pass LAST_MONTH then we can see statistics of last month till now.
 
 2. When user do 'updateStock' post request, user is supposed to pass complete stock item. </br>
 - Following is brief elaboration how logic works-
-- If the stock quantity is greater than existing stock quantity the it will be treated as stockUpdate request is performed by 
+- If the requested stock quantity is greater than existing stock quantity the it will be treated as stockUpdate request is performed by 
 Vendor (updating stock with new quantity) </br>
-- If stock quantity is less than existing stock quantity the it will be treated as stockUpdate is performed by Consumer. 
+- If the requested stock quantity is less than existing stock quantity the it will be treated as stockUpdate is performed by Consumer. 
 
 
 
 ## Technologies Used
-Java9 </br>
+Java8 </br>
 Maven </br>
 SpringBoot application for Rest API </br>
 Rest assured for test </br>
@@ -37,9 +37,9 @@ Postman tool for testing endpoints </br>
 - Go to root directory of checked out project.
 - Run mvn clean install
 - Open up intellij. Go to Open. Go to git repo folder and open project . On file menu go to project structure. 
-- Update language level support to 9
+- Update language level support to 8
 - Go to any test and run the junit test.
-- NOTE: Maven and Java 9 must be installed.
+- NOTE: Maven and Java 8 must be installed.
 
 - Command : mvn clean install 
 - Maven will load all the depdendencies and build the project(run the tests as well), and run the application.
